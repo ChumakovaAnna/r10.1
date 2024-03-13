@@ -52,13 +52,7 @@ export default function Form({ editFormVisibility, editTodo, cancelUpdate }) {
                             value={serviceValue}
                             onChange={(e) => setServiceValue(e.target.value)}
                         />
-                        
-                        {/* <button
-                            className='btn btn-secondary btn-md'
-                        >
-                            save
-                        </button> */}
-                        <Button variant="outline-success" size='sm'>сохранить</Button>
+                        <Button variant="outline-success" type='submit' size='sm'>сохранить</Button>
                     </div>
                 </form>
             ) : (
@@ -66,7 +60,7 @@ export default function Form({ editFormVisibility, editTodo, cancelUpdate }) {
                     className='form-group custom-form'
                     onSubmit={editSubmit}
                 >
-                    <label>update todo</label>
+                    <label>Обновить</label>
                     <div className='input-and-btn'>
                         <input
                             className='form-control'
@@ -75,14 +69,12 @@ export default function Form({ editFormVisibility, editTodo, cancelUpdate }) {
                             value={editValue || ''}
                             onChange={(e) => setEditValue(e.target.value)}
                         />
-                        <button
-                            className='btn btn-secondary btn-md'
-                        >
-                            update
-                        </button>
+                        <Button variant="outline-success" type='submit'>
+                            Обновить
+                        </Button>
                     </div>
-                    <button type="button" className='btn btn-primary btn-md back-btn'
-                        onClick={cancelUpdate}>CANCEL</button>
+                    <Button variant="outline-primary" type='submit'
+                        onClick={cancelUpdate}>отменить</Button>
                 </form>
             )}
         </div>
